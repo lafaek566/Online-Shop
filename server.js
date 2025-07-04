@@ -12,14 +12,7 @@ dotenv.config();
 
 const app = express();
 
-const corsOptions = {
-  origin: [
-    "https://online-shop-v1-h64c.vercel.app",
-    "https://online-shop-eight-sepia.vercel.app",
-  ],
-  credentials: true,
-};
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 
 // ✅ Static folder
@@ -36,5 +29,5 @@ mongoose
   .then(() => console.log("✅ MongoDB Connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
-const PORT = process.env.PORT;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
