@@ -17,12 +17,11 @@ const corsOptions = {
     "https://go-shop-six.vercel.app",
     "https://online-shop-eight-sepia.vercel.app",
     "https://online-shop-v1-h64c.vercel.app",
-    // tambahkan domain lain jika ada
+
   ],
   credentials: true,
 };
 app.use(cors(corsOptions));
-app.options("*", cors(corsOptions));
 app.use(express.json());
 
 // ✅ Static folder
